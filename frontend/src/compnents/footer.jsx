@@ -6,7 +6,7 @@ function Footer(){
                     <ul className="ulil"> 
                     <li className="lil">About</li>
                     <li className="lil">PRIVACY POLICY</li>
-                    <li className="lil"> ALL right reserved 2021</li>
+                    <li className="lil">slatt</li>
                    
                   
                      <img className="imgs" src="/images/logo.png" />
