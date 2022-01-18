@@ -1,0 +1,97 @@
+
+
+
+
+.cards{
+
+    float: left;
+    width: 59%;
+    height: auto;
+    margin-top: 70px; 
+    margin-right: 40px; 
+    box-shadow: -10px -13px 27px -11px rgba(0,0,0,0.57); 
+    
+    
+}
+
+.comingsoon{
+
+ text-align:center;  
+font-family: 'Courier New', monospace;
+
+margin-right: 15px; 
+
+
+
+}
+.movietitle{
+
+    text-align: center;
+   
+   font-family: Georgia, serif;
+        
+}     
+.movieinfosoon{ 
+    
+    font-family: 'Courier New', monospace;
+    text-align:center;
+ 
+    
+  
+} 
+.icon{
+    float: right;
+}
+/* .cardofdjanjo{
+    position:absolute;
+    left:130px;
+}
+.cardofbluestreak{
+    position:absolute;
+    left: 800px;
+}
+.cardofscarface{
+    position: absolute;
+    left: 459px;
+}    */
+
+
+@media only screen and (max-width: 550px) {
+    .cards{
+        box-shadow: -10px -13px 27px -11px rgba(0,0,0,0.57);
+        height: auto;
+        margin-bottom:0 ;
+        margin-right: 0;  
+        
+        width: 70%;
+        
+    }
+    
+
+
+
+}
+@media only screen and (max-width: 480px) {
+    .cards{
+        box-shadow: -10px -13px 27px -11px rgba(0,0,0,0.57);
+        height: auto;
+        margin-bottom:0 ;
+        margin-right: 0;  
+        
+        width: 70%;
+        
+    }
+    
+
+
+
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
+    
+    
+    
+    
+
+} 
+
+
