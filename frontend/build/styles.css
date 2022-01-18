@@ -124,7 +124,7 @@ a {
      
     position: absolute;
     width: 100%;
-    background-color: #fff;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,7 +194,7 @@ a {
 }
 .containerr{
    
-  background-color: #fff;
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22); 
     overflow: hidden;
@@ -296,7 +296,7 @@ a {
 .modal {
   position: relative;
   left: 20%;
-  top: 50%;
+  top: 70%;
   transform: translate(-50%, -50%);
   width: auto;
   display: inline-flex;
@@ -477,5 +477,28 @@ a {
 
   }
 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 500px) {
+
+  .containerr{
+    position: relative;
+    left: 150px;
+    
+  }
+   
+  
+  .imggg{
+    position: relative;
+    left: 400px; 
+    bottom: 50px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    
+  }
+  
+    
+
+} 
 
 
