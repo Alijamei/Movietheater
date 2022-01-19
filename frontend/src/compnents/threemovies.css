@@ -5,6 +5,10 @@
     max-width: 100%;
     padding: 0 4px;
   }
+  .imgtwo{
+    height: 33.5vh;
+ }
+
   .firstmovie{
      
       float: left;
@@ -128,6 +132,8 @@
         padding: 5px;
         
     }
+   
+    
     .findsopr{
         position: static;
     }
@@ -180,16 +186,21 @@
 
 
 @media only screen and (max-width: 1000px) {
-
+    /* .imgtwo{
+        height: 31.5vh;
+     } */
     .toh{
         position: relative;
         right: 250px;
        
     }
+    
     .mid{
        
     }
-    
+    .imgtwo{
+        height: auto;
+     }
     .wire{
         
         position:absolute;
@@ -237,6 +248,7 @@
         margin-left: 0;
         
     }
+    
     .wire{
        
     transform: translateX(-200px) translateY(-20px);
@@ -301,6 +313,7 @@ h1:hover{
         padding: 5px;
         
     }
+    
     .findsopr{
         position: static;
         bottom: 10px;
