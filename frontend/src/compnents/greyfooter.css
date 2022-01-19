@@ -17,6 +17,7 @@
 .ulil{
     position: absolute;
     left: 350px;
+
 }
 
 .imgs{
@@ -32,11 +33,13 @@
 @media only screen and (max-width: 850px) {
     .ulil{
         position: absolute;
+       
         left: 0px;
         bottom: -5px;
     }
   .imgs{ 
         position: absolute;
+       
         bottom: -1px;
     }
     
@@ -44,23 +47,23 @@
 
   }
 
-  @media only screen and (min-width: 480px) {
+  /* @media only screen and (min-width: 480px) {
+    .greyfooter{
+     
+        width: 100%;
+       
+        position: relative;
+        top: 400px;
+        background-color: rgb(70, 66, 60);
+       
+    }
     .ulil{
         position: absolute;
-        left: 0px;
+        left: 180px;
         bottom: -5px;
     }
-  .imgs{ 
-        position: absolute;
-        bottom: -1px;
-    }
-    
-    
 
-  }
-
-
-
+  } */
 
   @media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
     .greyfooter{
@@ -70,9 +73,13 @@
         position: relative;
         top: 400px;
         background-color: rgb(70, 66, 60);
-        /* overflow: hidden; */
+       
     }
-  
+    .ulil{
+        position: absolute;
+        left: 180px;
+        bottom: -5px;
+    }
 
   
 
