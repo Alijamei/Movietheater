@@ -119,7 +119,9 @@ function handleclick(event){
       process.env.REACT_APP_BACKEND_URL + `/${props.port}`,{[props.postit] : name,review:value})
     .then(res => { 
 
-            window.location.reload()
+            setTimeout(function(){
+              window.location.reload();
+          },100); 
           
     })
     .catch((err) => {
