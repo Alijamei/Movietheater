@@ -12,7 +12,7 @@ app.use(
   cors({
     methods: ["GET", "POST"],
     credentials: true,
-    origin:  "http://localhost:3000"
+    origin:   process.env.REACT_APP_BACKEND_URL
   })
 );
 
