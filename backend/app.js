@@ -31,7 +31,7 @@ app.use(
   cors({
     methods: ["GET", "POST","DELETE"],
     credentials: true,
-    origin:  process.env.REACT_APP_BACKEND_URL
+    origin:  "http://localhost:3000"
   })
 );
 
@@ -63,9 +63,9 @@ app.use('/', postroutes);
 
 
 if (process.env.NODE_ENV === 'production') {
-  // app.use(express.static(path.join(__dirname, 'src')));
 
-  app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+  app.use(express.static(path.join(__dirname, './frontend/build')));
 
   app.get('*', (req, res) =>
     res.sendFile(
@@ -74,37 +74,10 @@ if (process.env.NODE_ENV === 'production') {
   );
 
     }
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.join(__dirname+'../frontend/build/index.html'));
-  // });
 
 
 
 
-// } else {
-//   app.get('/', (req, res) => {
-//     res.send('API is running....');
-//   });
-// }
-
-
-// app.use((req, res, next) => {
-//     const error = new HttpError('Could not find this route.', 404);
-//     throw error;
-//   });
-  
-  // app.use((error, req, res, next) => {
-  //   if (res.headerSent) {
-  //     return next(error);
-  //   }
-  //   res.status(error.code || 500);
-  //   res.json({ message: error.message || 'An unknown error occurred!' });
-  // });
-  // app.use(function(req, res, next) {
-  //   var err = new Error('Not Found');
-  //   err.status = 404;
-  //   next(err);
-  // });
  
 
   const PORT = process.env.PORT || 5000;
