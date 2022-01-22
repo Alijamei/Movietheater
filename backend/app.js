@@ -62,7 +62,7 @@ app.use('/', cartroutes);
 app.use('/', postroutes);  
 
 
-app.use(express.static(path.join(__dirname,'..', 'frontend', 'build')));
+// app.use(express.static(path.join(__dirname,'..', 'frontend', 'build')));
 // if (process.env.NODE_ENV === 'production') {
 
 // app.use('*', (req, res) =>
@@ -71,10 +71,19 @@ app.use(express.static(path.join(__dirname,'..', 'frontend', 'build')));
 //     )
 //   );
 
- 
-app.use((res, req, next) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+  app.get('*', (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, '..', 'frontend', 'build', 'index.html')
+    )
+  );
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running....');
+  });
+}
 
 
 
@@ -83,7 +92,7 @@ app.use((res, req, next) => {
 
  
 
-  const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
  
 
  app.listen(PORT,function(){
