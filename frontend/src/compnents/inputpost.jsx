@@ -118,8 +118,8 @@ function handleclick(event){
     .post(
       process.env.REACT_APP_BACKEND_URL + `/${props.port}`,{[props.postit] : name,review:value})
     .then(res => { 
-
-          res
+    
+          console.log(res)
              
           
           
