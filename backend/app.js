@@ -31,7 +31,7 @@ app.use(
   cors({
     methods: ["GET", "POST","DELETE"],
     credentials: true,
-    origin:process.env.REACT_APP_BACKEND_URL
+    origin:  "http://localhost:3000"
   })
 );
 
@@ -56,30 +56,24 @@ mongoose.connect(process.env.MONGOLAB_URI)
     });
 
 
+
 app.use('/user',userroutes)
 app.use('/', cartroutes);
 app.use('/', postroutes);  
 
 
-
+app.use(express.static(path.join(__dirname,'..', 'frontend', 'build')));
 // if (process.env.NODE_ENV === 'production') {
 
+// app.use('*', (req, res) =>
+//     res.sendFile(
+//       path.resolve(__dirname, '..', 'frontend', 'build', 'index.html')
+//     )
+//   );
 
-  app.use(express.static(path.join(__dirname,'..', 'frontend', 'build')));
-
-  app.get('*', (req, res) =>
-    res.sendFile(
-      path.resolve(__dirname, '..', 'frontend', 'build', 'index.html')
-    )
-  );
-
-  app.get('*', function (req, res) { // This wildcard method handles all requests
-
-    Router.run(routes, req.path, function (Handler, state) {
-        var element = React.createElement(Handler);
-        var html = React.renderToString(element);
-        res.render('main', { content: html });
-    });
+ 
+app.use((res, req, next) => {
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
 });
 
 
