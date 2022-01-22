@@ -89,7 +89,7 @@ app.use('/', postroutes);
 app.use(express.static(path.join(__dirname, '../frontend/build')))
 // This solves the "Not found" issue when loading an URL other than index.html.
 app.get('*', (req, res) => { //n3
-  res.sendFile(path.join(__dirname + '../frontend/build/index.html'), err => {
+  res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'), err => {
      if (err) { res.status(500).send(err)  }
   })
 })
