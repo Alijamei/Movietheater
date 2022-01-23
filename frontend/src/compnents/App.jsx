@@ -244,7 +244,8 @@ function App(){
           <Footer /> 
                </Route>
             
-                  <Route  path="/goodfellas">
+                 <Route path="/goodfellas">
+                   <Redirect to="/goodfellas" />
                    <Navbar />
                    <Certainmovie
                      image={"/images/wallfella.jpg"}
@@ -264,6 +265,8 @@ function App(){
                    
                   </Route>
                   <Route  path="/soprano">
+                        <Redirect to="/soprano" />
+                     
                    <Navbar />
                    <Certainmovie
                      image={"/images/soprano.jpg"}
@@ -281,6 +284,7 @@ function App(){
                    <Footer />
                    </Route>
                    <Route  path="/onceupontime">
+                      <Redirect to="/onceupontime" />
                    <Navbar />
                    <Certainmovie
                      image={"/images/hollywoodwallpaper.jpg"}
@@ -503,7 +507,7 @@ function App(){
                   <Route  path="/signup">
                        <Signup />
                   </Route>
-                  <Route path ="/user/:user/watchlater">
+                  <Route path ="/watchlater">
                      <Notfound />
                   </Route>
             </Switch>
