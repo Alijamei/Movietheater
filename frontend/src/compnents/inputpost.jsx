@@ -31,8 +31,7 @@ const [value, setValue] = useState(1);
      useEffect(() => {
       axios.defaults.withCredentials = true
       axios.get(process.env.REACT_APP_BACKEND_URL +`/${props.port}`).then((res) => {       
-              console.log(res.data)
-              console.log(props.port)
+             
                setposts(res.data);
               
         
@@ -120,7 +119,7 @@ function handleclick(event){
       process.env.REACT_APP_BACKEND_URL +`/${props.port}`,{[props.postit] : name,review:value})
     .then(res => { 
     
-          console.log(res)
+            window.location.reload();
              
           
           
