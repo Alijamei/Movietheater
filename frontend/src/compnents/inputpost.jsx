@@ -30,7 +30,7 @@ const [value, setValue] = useState(1);
    
      useEffect(() => {
       axios.defaults.withCredentials = true
-      axios.get( `/${props.port}`).then((res) => {       
+      axios.get( process.env.REACT_APP_BACKEND_URL +`/${props.port}`).then((res) => {       
          
                setposts(res.data);
               
@@ -116,7 +116,7 @@ function handleclick(event){
     
     axios
     .post(
-       `/${props.port}`,{[props.postit] : name,review:value})
+      process.env.REACT_APP_BACKEND_URL +`/${props.port}`,{[props.postit] : name,review:value})
     .then(res => { 
     
           console.log(res)
