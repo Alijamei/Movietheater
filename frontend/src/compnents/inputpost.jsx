@@ -167,12 +167,12 @@ function handleclick(event){
                 {posts.map((item)=>{
                      return(   
                         <div>
-                            <p className="para">review by  {item.posts[0].name[0]} <Rating name="read-only" value={item.posts[0].review} readOnly /> </p>
+                            <p className="para">review by  <i className="name1">{item.posts[0].name[0]}</i> <Rating name="read-only" value={item.posts[0].review} readOnly /> </p>
                            
                           
                        <div>        
                          {/* { <p> {item.posts[0].post}  {auth === item.posts[0].name[0] ? <i className='icon fa fa-ellipsis-h' onClick={click}> </i>:null} {fls && auth === item.posts[0].name[0]?<div><i className="boxd" onClick={deletee}>delete</i></div>:null}{deleteconfirm && auth === item.posts[0].name[0]?<div className="divvv"><i className="z">Delete your comment?</i><i className="z">confirm</i></div>:null}</p>} */}
-                         { <p> {item.posts[0].post}  {auth === item.posts[0].name[0] ? <i className='icon fa fa-ellipsis-h' onClick={click}> </i>:null} {fls && auth === item.posts[0].name[0]?<div><i className="boxd" >delete</i></div>:null}{deleteconfirm && auth === item.posts[0].name[0]?<div className="modal"> <div className="options"> <p className="message">Delete your comment and review?</p> <button className="btnn" onClick = {() => { methodName(item._id.id);} }>delete</button> <button className="cancel">cancel</button> </div> </div>:null}</p>}
+                         { <p className="stylep"> {item.posts[0].post}  {auth === item.posts[0].name[0] ? <i className='icon fa fa-ellipsis-h' onClick={click}> </i>:null} {fls && auth === item.posts[0].name[0]?<div><i className="boxd" >delete</i></div>:null}{deleteconfirm && auth === item.posts[0].name[0]?<div className="modal"> <div className="options"> <p className="message">Delete your comment and review?</p> <button className="btnn" onClick = {() => { methodName(item._id.id);} }>delete</button> <button className="cancel">cancel</button> </div> </div>:null}</p>}
                       </div> 
           
                       </div>

@@ -87,13 +87,13 @@ app.use('/', postroutes);
 // }
 
 
-app.use(express.static(path.join(__dirname, '../frontend/build')))
+// app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-app.get('*', (req, res) => { 
-  res.sendFile(path.resolve(__dirname,'../frontend/build/index.html'), err => {
-     if (err) { res.status(500).send(err)  }
-  })
-})
+// app.get('*', (req, res) => { 
+//   res.sendFile(path.resolve(__dirname,'../frontend/build/index.html'), err => {
+//      if (err) { res.status(500).send(err)  }
+//   })
+// })
 
 
 
