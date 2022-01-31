@@ -68,7 +68,7 @@ function Signup(){
                                
 
                                 <a > Forget Password?</a>
-                                <button className="btn-login" type="submit" >  lesgo </button>
+                                <button className="btn-login" type="submit" >  Lets' Go </button>
 
                                   <p className="or p"> or Signin</p>
                                  <Link to="/signin"><button className="snns" >Sign in</button></Link> 
