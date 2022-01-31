@@ -4,7 +4,7 @@
          <a href="https://movie--theater.herokuapp.com/">Visit Movietheater</a>
       <hr>
       <p align="center">
-        a full-stack (crud ) web app to allow users to rate and review movies and to add movies to watch later list.
+        a full-stack (crud ) web app that allow users to rate and review movies and to add movies to their watch later list.
         </p>
      <hr>
      
