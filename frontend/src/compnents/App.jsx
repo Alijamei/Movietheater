@@ -250,7 +250,7 @@ function App(){
                    <Certainmovie
                      image={"/images/wallfella.jpg"}
                      title={"Goodfellas"}
-                     video={"/images/fellasvideo.mp4"}
+                     video={"/images/fellavideo.mp4"}
                      watch={"Watch Goodfelles"}
                      stream={"Stream Goodfellas  now — no subscription required."}
                      poster={"/images/goodfelles.jpg"}
