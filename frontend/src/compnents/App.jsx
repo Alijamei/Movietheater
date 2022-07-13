@@ -270,7 +270,7 @@ function App(){
                    <Navbar />
                    <Certainmovie
                      image={"/images/soprano.jpg"}
-                     title={"The Sopranos"}
+                     title={"TheSopranos"}
                      video={"/images/soprano.mp4"}
                      watch={"Watch The Sopranos"}
                      stream={"Stream  The Sopranos  now — no subscription required."}
