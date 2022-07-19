@@ -11,13 +11,7 @@ import { schema } from "../valdition";
 import * as yup from "yup";
 import axios from "axios";
 
-
-
 function Signin(){
- 
- 
- 
-    
  
      const userObject = useContext(AuthContext);
     
@@ -44,16 +38,9 @@ function Signin(){
                     console.log(err)
                     console.log('error here')                  
               });
-              
-           
-             
-            
+                 
           }
           
-       
-      
-         
-    
 
     async function handlechangee(event){
           const{value,name} = event.target
@@ -69,10 +56,7 @@ function Signin(){
           
   }         
         
-        
-   
-    
-    
+  
     return (
           
      <div className='all'> 
