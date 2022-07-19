@@ -5,8 +5,6 @@ function Image(){
              <div className="image">
                  <img src="/images/nyc.jpg" />
             </div>
-            
-           
         );
 }
 export default Image;
