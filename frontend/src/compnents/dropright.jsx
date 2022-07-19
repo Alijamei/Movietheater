@@ -1,14 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
-
 function Dropright(){
   return(
-    <div className="navbar">
-          
-           
-         <div className="navwrapper">
-         
+    <div className="navbar">             
+         <div className="navwrapper">       
                 <ul id="navi" className="left hide-on-med-and-down">
                     <a href="#" className="brand center">HBO</a>
                     <li><a className="lii"> Series</a></li>
