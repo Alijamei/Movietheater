@@ -8,14 +8,10 @@ function Cartit(props){
     }
     return(
         
-      <div>
-          
+      <div> 
          {props.mapp}
-
       </div>
-            
-          
-      
+ 
     )
 }
 
