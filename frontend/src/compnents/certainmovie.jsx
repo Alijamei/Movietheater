@@ -24,16 +24,8 @@ function Certainmovie(props){
                                     <p className="watch"> {props.watch}</p>
                                     <p className="watchit">{props.stream}</p>
                                 </div>
-                        </div>
-                        
-                        
-                    
+                        </div>                         
                 </div> 
-
-
-
-
-
 
        );
 }
