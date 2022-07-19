@@ -31,10 +31,6 @@ router.post('/cart',   function(req,res,next){
 
 if(req.isAuthenticated()){
    
-           
-      
-   
-
     User.findById(req.user._id,async function(err,theuser){
 
         if(err){
@@ -85,42 +81,28 @@ if(req.isAuthenticated()){
     
     }
     });
-    
-
         router.delete('/cart/:pid',   function(req,res,next){
 
             if(req.isAuthenticated()){
-               
-                const placeId = req.params.pid;  
-               
-            
-                Cart.findById(placeId,async function(err,theuser){
+                const placeId = req.params.pid;    
+                 
+                 Cart.findById(placeId,async function(err,theuser){
             
                     if(err){
                         console.log(err)
                     }
                     else{
-
-                       
-
+                      
                          const item= await theuser.populate('userr')
                          await item.remove();
                          item.userr.carts.pull(item);
                          await item.userr.save()
-                         res.status(201).send(item);
-                      
-                          
-                   
-                    
+                         res.status(201).send(item);                                                                                       
                     }
                
                 })
                  }
                 });
-
-
            
-
-
 module.exports = router;
 
