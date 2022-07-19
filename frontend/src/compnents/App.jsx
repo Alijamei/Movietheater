@@ -54,9 +54,9 @@ function App(){
        
                  const localUser = JSON.parse(localStorage.getItem('intial')) || []
                  const [intial, end] = useState(localUser);
-                //  console.log(localUser,'looooooooooooocal')
+     
                  useEffect(()=>{localStorage.setItem("intial", JSON.stringify(intial))},[{}]) 
-                //  console.log(intial)
+        
                 function Callit(sooon,tiitle,images,quantityyy,infoo){ 
                    
                     // is there  this item in the cart which equal to title so we dont add it again in else//    
@@ -75,11 +75,9 @@ function App(){
                      console.log('error here')                  
                  });
 
-                
-               
-                 
+
                   if(item){                   
-                            // console.log(item,'iteeeeeeeeeem');                                                
+                            // console.log(item);                                                
                           
                     }
                    else{ 
@@ -99,9 +97,7 @@ function App(){
                                 }
                         /* Removing from the cart */      
                             function removeit(id){ 
-                             
-                           
-                              
+               
                               axios
                               .delete(
                                 process.env.REACT_APP_BACKEND_URL + `/cart/${id}`)
@@ -122,16 +118,9 @@ function App(){
                             });
                       
                            }); 
-                               
-                             
-                                      
-                                
-
+                                              
                             }
-                            
-                              
-                            
-                          
+                      
                           
          /* Save data of state in local stoarge to use it in the next routers */
                
@@ -340,16 +329,11 @@ function App(){
                                 />
                                 </div>
                                 ))} 
-                                                 
-                           
-                    
+
                        />
                           
-                
-
-                  </Route> 
-                
-                   
+                   </Route> 
+                                
       </Switch>
       </div>   
      </Router>
@@ -360,10 +344,7 @@ function App(){
         <div className="body">
        <Switch>
            <Route exact path="/">
-       
-              
-              
-
+     
                   <Navbar />
                   <Image />
                   <Movies />
@@ -528,9 +509,6 @@ function App(){
 };
 
 export default App;
-
-
-// cd C:/Users/wxfcc/Downloads/movie  
 
 
   
