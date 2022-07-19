@@ -4,7 +4,6 @@ const Cart= require('./cartschema');
 const Post= require('./postschema');
 var mongoose = require('mongoose')
 
-
 const router = express.Router();
 
 router.get("/onceupontimepost",  async function(req,res,next){
@@ -17,8 +16,6 @@ router.get("/onceupontimepost",  async function(req,res,next){
                {$match: {}},
                { $lookup: { from: 'users', localField: 'user', foreignField: '_id', as: 'user' } },            
                {$group: {_id: {id: '$_id'},  posts:{$push:{post:{ $ifNull: [ "$postsupontime",  null ]},name:"$user.name",review:"$review"}}}}
-        
-
           ])
          }
         catch{
@@ -37,15 +34,8 @@ router.get("/onceupontimepost",  async function(req,res,next){
         res.status(201).send(select);  
     }      
             
-            
-   
-
-
-
 })
 router.get("/sopranopost",  async function(req,res,next){
-
- 
     if(req.isAuthenticated()){
         const theid=req.user._id;
         let find;
@@ -54,8 +44,6 @@ router.get("/sopranopost",  async function(req,res,next){
                {$match: {}},
                { $lookup: { from: 'users', localField: 'user', foreignField: '_id', as: 'user' } },            
                {$group: {_id: {id: '$_id'},  posts:{$push:{post:{ $ifNull: [ "$postssoprano",  null ]},name:"$user.name",review:"$review"}}}}
-             // { $project: { "user.hash":0,"user.salt":0 } }
-
           ])
          }
         catch{
@@ -69,15 +57,10 @@ router.get("/sopranopost",  async function(req,res,next){
         const select=  find.filter((element) => 
         element.posts.some((subElement) => subElement.post != null))
         const mappin = select.map(x => x.posts[0].name[0])
-            
-     //    find.map(x => x.posts.filter(x=>x.post!=null))
+   
         res.status(201).send(select);  
     }      
-            
-         
-   
-   
-   
+              
    })
    router.get("/goodfellaspost",  async function(req,res,next){
 
@@ -105,15 +88,8 @@ router.get("/sopranopost",  async function(req,res,next){
            const select=  find.filter((element) => 
            element.posts.some((subElement) => subElement.post != null))
            const mappin = select.map(x => x.posts[0].name[0])
-               
-        //    find.map(x => x.posts.filter(x=>x.post!=null))
            res.status(201).send(select);  
        }      
-               
-         
-   
-   
-   
    })
 router.get("/allposts",  async function(req,res,next){
             
@@ -127,8 +103,6 @@ router.get("/allposts",  async function(req,res,next){
             //    {$unwind: '$user'}, 
             //    {$group: {_id: {name: '$user.name'},  posts:{$push:{post:{ $ifNull: [ "$postsfella",  null ]}}}}}
                
-               
-
           ])
          }
         catch{
@@ -140,9 +114,7 @@ router.get("/allposts",  async function(req,res,next){
            next(err)
         }
         const select=  find
-       
-            
-     //    find.map(x => x.posts.filter(x=>x.post!=null))
+      
         res.status(201).send(select);  
     }      
 })
@@ -150,11 +122,7 @@ router.get("/allposts",  async function(req,res,next){
 router.post('/onceupontimepost',   function(req,res,next){
 
     if(req.isAuthenticated()){
-       
-               
-               
-       
-    
+
         User.findById(req.user._id,async function(err,theuser){
     
             if(err){
@@ -223,11 +191,7 @@ router.post('/onceupontimepost',   function(req,res,next){
                 router.post('/sopranopost',   function(req,res,next){
 
                     if(req.isAuthenticated()){
-                                
-                               
-                        
-                       
-                    
+ 
                         User.findById(req.user._id,async function(err,theuser){
                     
                             if(err){
