@@ -1,5 +1,4 @@
 require('dotenv').config({ silent: process.env.NODE_ENV === 'production' })
-dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 const express = require('express');
 var bodyParser = require('body-parser')
 const cartroutes=require('./routes/cartroutes');
@@ -64,41 +63,37 @@ app.use('/', cartroutes);
 app.use('/', postroutes);  
 
 
-// app.use(express.static(path.join(__dirname, '../frontend/build')))
+// app.use(express.static(path.join(__dirname,'..', 'frontend', 'build')));
+// if (process.env.NODE_ENV === 'production') {
+
+// app.use('*', (req, res) =>
+//     res.sendFile(
+//       path.resolve(__dirname, '..', 'frontend', 'build', 'index.html')
+//     )
+//   );
+
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+//   app.get('*', (req, res) =>
+//     res.sendFile(
+//       path.resolve(__dirname, '..', 'frontend', 'build', 'index.html')
+//     )
+//   );
+// } else {
+//   app.get('/', (req, res) => {
+//     res.send('API is running....');
+//   });
+// }
+
+
 app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-// app.get('*', (req, res) => { 
-//   res.sendFile(path.resolve(__dirname,'../frontend/build/index.html'), err => {
-//      if (err) { res.status(500).send(err)  }
-//   })
-// })
 app.get('*', (req, res) => { 
   res.sendFile(path.resolve(__dirname,'../frontend/build/index.html'), err => {
      if (err) { res.status(500).send(err)  }
   })
 })
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../frontend/build')));
-
-//  app.get('*', (req, res) =>
-//   res.sendFile(
-//        path.resolve(__dirname, '..', 'frontend', 'build', 'index.html')
-//    )
-//  );
-// } else {
-//  app.get('/', (req, res) => {
-//   res.send('API is running....');
-//  });
-// }
-
-
-// app.use(express.static(path.join(__dirname, '../frontend/build')))
-
-// app.get('*', (req, res) => { 
-//   res.sendFile(path.resolve(__dirname,'../frontend/build/index.html'), err => {
-//      if (err) { res.status(500).send(err)  }
-//   })
-// })
 
 
 
@@ -110,4 +105,3 @@ app.get('*', (req, res) => {
       console.log(`Server is running on port ${PORT}`)
     
 })
-
