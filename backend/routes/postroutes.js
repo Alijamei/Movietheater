@@ -63,8 +63,7 @@ router.get("/sopranopost",  async function(req,res,next){
               
    })
    router.get("/goodfellaspost",  async function(req,res,next){
-
- 
+       
     if(req.isAuthenticated()){
            const theid=req.user._id;
            let find;
@@ -74,7 +73,6 @@ router.get("/sopranopost",  async function(req,res,next){
                   { $lookup: { from: 'users', localField: 'user', foreignField: '_id', as: 'user' } },            
                   {$group: {_id: {id: '$_id'},  posts:{$push:{post:{ $ifNull: [ "$postsfella",  null ]},name:"$user.name",review:"$review"}}}}
                
-
              ])
             }
            catch{
@@ -136,10 +134,7 @@ router.post('/onceupontimepost',   function(req,res,next){
                           
                         review:req.body.review,
                         postsupontime:req.body.postsupontime,
-                        user:theuser._id,
-                         
-                        
-  
+                        user:theuser._id,                
              })
              if(newpost.postsupontime.length !== 0 && Number.isInteger(newpost.review)  ){
                     const item= await theuser.populate('posts')
@@ -149,9 +144,7 @@ router.post('/onceupontimepost',   function(req,res,next){
                           {$match: {}},
                           { $lookup: { from: 'users', localField: 'user', foreignField: '_id', as: 'user' } },           
                           {$unwind: '$user'}, 
-                          {$group: {_id: {name: '$user.name'},  posts:{$push:{post:{ $ifNull: [ "$postsupontime",  null ]}}}}}
-               
-                          
+                          {$group: {_id: {name: '$user.name'},  posts:{$push:{post:{ $ifNull: [ "$postsupontime",  null ]}}}}}                       
            
                      ])
                     }
@@ -198,8 +191,7 @@ router.post('/onceupontimepost',   function(req,res,next){
                                 console.log(err)
                             }
                             else{
-                            
-                           
+                                                    
                                if(theuser){
                                   
                                     const newpost = new Post({
@@ -258,11 +250,7 @@ router.post('/onceupontimepost',   function(req,res,next){
                         router.post('/goodfellaspost',   function(req,res,next){
 
                             if(req.isAuthenticated()){
-                                        
-                                       
-                                
-                               
-                            
+                                    
                                 User.findById(req.user._id,async function(err,theuser){
                             
                                     if(err){
@@ -290,9 +278,7 @@ router.post('/onceupontimepost',   function(req,res,next){
                                                      { $lookup: { from: 'users', localField: 'user', foreignField: '_id', as: 'user' } },           
                                                      {$unwind: '$user'}, 
                                                      {$group: {_id: {name: '$user.name'},  posts:{$push:{post:{ $ifNull: [ "$postsfella",  null ]}}}}}
-               
-                                                     
-                                      
+ 
                                                 ])
                                                }
                                               catch{
@@ -342,9 +328,6 @@ router.post('/onceupontimepost',   function(req,res,next){
                                                 }
                                             });
                                                             
-
-
-
                                     }
                                 });
                                 router.delete('/get/:pid',   function(req,res,next){
@@ -371,13 +354,7 @@ router.post('/onceupontimepost',   function(req,res,next){
                                     })
                                      }
                                     });
-                    
-                              
-                             
-                    
-
-                        
-
+                     
 
 module.exports = router;
 
