@@ -39,19 +39,7 @@ function Movies(){
  return( 
     <div className="movies">
           <div className="fellas">
-                  
-                    
-              
-
                     {getti()}
-            
-                      
-                 
-
-                   
-                
-                  
-                  
             </div>  
                   
         <div className="firstmovie">
@@ -60,17 +48,11 @@ function Movies(){
                <h1 className="fella" onMouseOver={setit} > Goodfelles </h1>
                <p className="moviep">The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.</p>
                <Link to="/goodfellas" className="findoutmore"> More info </Link>
-               
-                            
-                              
-                              
-               
+                    
                   {/* {intial  ?  
                           <img    src="/images/goodfelles.jpg"  />
                       
                    :  ''}*/}
-                  
-              
             </div>
           </div>
           <div className="secondmovie">
@@ -93,19 +75,9 @@ function Movies(){
                
            </div>
         </div>
-                
-
-
-
-
 
 
     )
-
-
-
-
-
 
 }
 export default Movies;
