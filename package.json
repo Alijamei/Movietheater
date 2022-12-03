@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "web",
   "version": "0.1.0",
   "private": true,
@@ -59,5 +60,20 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "node-sass": "^6.0.1"
+=======
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "install": "^0.13.0",
+    "memorystore": "^1.6.6",
+    "mongoose": "^6.1.6",
+    "passport": "^0.5.2",
+    "passport-local-mongoose": "^6.1.0"
+>>>>>>> 854aa1f3f7686fba343af02e1623923c80add000
   }
 }

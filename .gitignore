@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -17,3 +18,6 @@
 
 npm-debug.log*
 
+=======
+.env
+>>>>>>> 854aa1f3f7686fba343af02e1623923c80add000
