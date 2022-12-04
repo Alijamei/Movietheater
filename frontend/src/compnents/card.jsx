@@ -32,6 +32,3 @@ function Card(props){
     );
 }
 export default Card;
-
-
-{/* <div className={ "cards" + ( props.cardss ? props.cardss : "")}  style={props.stylecard}> */}
