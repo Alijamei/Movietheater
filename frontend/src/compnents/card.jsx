@@ -13,9 +13,6 @@ function Card(props){
   }
   
   return(
-    
-   
-      
          <div className={ "cards" }  style={props.styleCard}>
             <img className="imagescar"  style={props.style}  src={props.image} />
              <div className="cardinfo" style={props.styleOfCardInfo}>
@@ -28,7 +25,6 @@ function Card(props){
                  { addMovieStatus ? <i onClick={saveMovieInDb}  className={props.icon}></i> : null}   
              </div>
             </div> 
-       
     );
 }
 export default Card;
