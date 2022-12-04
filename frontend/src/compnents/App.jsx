@@ -30,6 +30,7 @@ function App(){
 
 
   if (user) {
+   // if user loggedIn user can access protected routes //
     routes = (        
           <Router>
             <div className="body">
