@@ -38,7 +38,7 @@ function Signup(){
                                 })
                                      .catch((err) => {
                                         console.log(err)
-                                        console.log('error here')                  
+                                        console.log('Error here')                  
                                 });                  
                           })}
                         >

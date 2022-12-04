@@ -6,9 +6,7 @@ function Card(props){
     const [smh,end] = useState (props.change)
   function pressed() {
            window.location.reload()
-           props.herecallit(props.soon,props.title,props.image,props.quantity,props.info);
-        
-    
+           props.saveWatchLaterInDb(props.soon,props.title,props.image,props.quantity,props.info); 
      }
   
       function Remove() {

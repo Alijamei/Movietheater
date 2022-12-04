@@ -21,8 +21,6 @@ router.get('/cart', async function(req,res){
      }
      const select=tfind.carts
      res.status(201).send(select);  
-     
-
 
 });
 
