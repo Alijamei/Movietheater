@@ -3,48 +3,11 @@ import Carousel, {slidesToShowPlugin }  from '@brainhubeu/react-carousel';
 import axios from 'axios';
 import Card from '../card';
 import { WatchLaterContext } from '../../context/watchLaterContext'
-
+import { useCookies } from 'react-cookie';
+import useSaveMovieInWatchLaterDB from '../../api/useSaveMovie';
 
 export default function MainPageCard(){
-    const {WatchLaterList,setWatchLaterList} = useContext(WatchLaterContext);
-
-           
-    const localUser = JSON.parse(localStorage.getItem('initial')) || []
-    const [Initial, end] = useState(localUser);
-
-    useEffect(()=>{localStorage.setItem("initial", JSON.stringify(Initial))},[{}])  
-
-    function saveMovieInWatchLaterDB(soon,title,images,quantity,info){ 
-                   
-        // is there  this item in the cart which equal to title so we dont add it again in else//    
-     const isMovieInWatchLaterList = Initial.find(list => list.title ===  title);
-
-     const addMovieToWatchLaterList =  {soon:soon,title:title,image:images,quantity:quantity,info:info}
-    
-     axios
-     .post(
-      process.env.REACT_APP_BACKEND_URL +"/cart",addMovieToWatchLaterList)
-     .then(res => {           
-             console.log(res,'savedinDB');  
-     })
-     .catch((err) => {
-         console.log(err)
-         console.log('error here')                  
-     });
-
-
-      if(!(isMovieInWatchLaterList)){                   
-               /* adding to the WatchLaterList */
-              end(value => {                                 
-                              return [
-                                    ...value,
-                                   {soon:soon,title:title,image:images,quantity:quantity,info:info}
-                              ]
-                            
-                          })
-
-                      }
-                    }
+     const {WatchLaterList,setWatchLaterList} = useContext(WatchLaterContext);
                  
     const titleRobot = "Mr.robot";
     const titleScarface="Scarface";
@@ -79,7 +42,7 @@ export default function MainPageCard(){
                     info={"Tony Montana manages to leave Cuba during the Mariel exodus of 1980. He finds himself in a Florida refugee camp He's Internatoinal  drug dealer"}
                     cards={"cardofscarface"}
                     icon={WatchLaterList.find(list => list.array.title === titleScarface) ? "icon fa fa-check-circle fa-lg" : "icon fa fa-plus-square fa-lg"}
-                    saveWatchLaterInDb={saveMovieInWatchLaterDB}
+                    saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
                     // press={'Watchlater'}
                     valueo={true}
                     change={false}
@@ -94,7 +57,7 @@ export default function MainPageCard(){
                     icon={WatchLaterList.find(list => list.array.title === titleDjango) ? "icon fa fa-check-circle fa-lg" : "icon fa fa-plus-square fa-lg"}
                     info={"With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi."}
                     cards={"cardofdjanjo"}
-                    saveWatchLaterInDb={saveMovieInWatchLaterDB}
+                    saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
                     valueo={true}
                     // button={"Watchlater"}
 
@@ -109,7 +72,7 @@ export default function MainPageCard(){
                     icon={WatchLaterList.find(list => list.array.title === titleBlueStreak) ? "icon fa fa-check-circle fa-lg" : "icon fa fa-plus-square fa-lg"}
                     info={"With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi."}
                     cards={"cardofbluestreak"}
-                    saveWatchLaterInDb={saveMovieInWatchLaterDB}
+                    saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
                     valueo={true}
                     // button={'Watchlater'}
                 
@@ -124,7 +87,7 @@ export default function MainPageCard(){
                         title={"Mr.robot"}
                         info={"Elliot, a brilliant but highly unstable young cyber-security engineer becomes a key figure in a complex game of global domiHnance Worldwide"}
                         cards={"cardofMr.robot"}
-                        saveWatchLaterInDb={saveMovieInWatchLaterDB}
+                        saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
                         valueo={true}
                         // button={'Watchlater'}
                         />
@@ -135,4 +98,4 @@ export default function MainPageCard(){
         </div>
 
     )
-}
+    }

@@ -5,7 +5,6 @@ function Card(props){
     const [start,torf] = useState (props.valueo)
     const [smh,end] = useState (props.change)
   function pressed() {
-           window.location.reload()
            props.saveWatchLaterInDb(props.soon,props.title,props.image,props.quantity,props.info); 
      }
   

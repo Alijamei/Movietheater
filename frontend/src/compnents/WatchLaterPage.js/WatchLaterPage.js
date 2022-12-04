@@ -3,48 +3,12 @@ import {React,useState,useEffect,useContext} from "react";
 import { WatchLaterContext } from '../../context/watchLaterContext'
 import WatchLater  from "../cart";
 import Card from '../card';
-
+import useSaveMovieInWatchLaterDB from '../../api/useSaveMovie';
 
 export default function WatchLaterPage(){
     const {WatchLaterList,setWatchLaterList} = useContext(WatchLaterContext);
-    console.log(WatchLaterList,'watchCONTEXT')
-          
-    const localUser = JSON.parse(localStorage.getItem('initial')) || []
-    const [Initial, end] = useState(localUser);
-
-    useEffect(()=>{localStorage.setItem("initial", JSON.stringify(Initial))},[{}]) 
-
-  function saveMovieInWatchLaterDB(soon,title,images,quantity,info){ 
-      
-       // is there  this item in the cart which equal to title so we dont add it again in else//    
-    const isMovieInWatchLaterList = Initial.find(list => list.title ===  title);
-
-    const addMovieToWatchLaterList =  {soon:soon,title:title,image:images,quantity:quantity,info:info}
-   
-    axios
-    .post(
-     process.env.REACT_APP_BACKEND_URL +"/cart",addMovieToWatchLaterList)
-    .then(res => {           
-            console.log(res,'savedinDB');  
-    })
-    .catch((err) => {
-        console.log(err)
-        console.log('error here')                  
-    });
 
 
-     if(!(isMovieInWatchLaterList)){                   
-              /* adding to the WatchLaterList */
-             end(value => {                                 
-                             return [
-                                   ...value,
-                                  {soon:soon,title:title,image:images,quantity:quantity,info:info}
-                             ]
-                           
-                         })
-
-                     }
-                   }
     function removeFromWatchLaterList(id){ 
                
         axios
@@ -82,7 +46,7 @@ export default function WatchLaterPage(){
                                         soon={item.array.soon}
                                         title={item.array.title}
                                         info={item.array.info}             
-                                        herecallit={saveMovieInWatchLaterDB}          
+                                        herecallit={useSaveMovieInWatchLaterDB}          
                                         remove={'icon fa fa-trash'}
                                         hereremove={removeFromWatchLaterList}
                                         valueo={false}
