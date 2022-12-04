@@ -15,15 +15,8 @@ const [deleteconfirm,setconfirm]=useState(false);
 const [comment,setit]=useState(['']);
 const [value, setValue] = useState(1);
 
-
-
-
-
   const userObject = useContext(AuthContext);
   const user=userObject != undefined;
-
- 
- 
   const [posts, setposts] = useState([]);
   
    
@@ -93,26 +86,14 @@ function handlechange(event){
        
     
 }
-
-
-
-
 function handleclick(event){
-      
-  
     setit(value =>[
             ...value,name
-            
-
-
     ])
   
     event.preventDefault();
     changed('')
-     
   
-   
-    
     axios
     .post(
       process.env.REACT_APP_BACKEND_URL +`/${props.port}`,{[props.postTheMovie] : name,review:value})
@@ -139,8 +120,7 @@ function handleclick(event){
       <div className='all' style={props.theInputStyle} onClick={clicked}>
      
        <div className="containertofform"> 
-      
-           
+            
             {user &&(
               <>
               <Rating name="simple-controlled" value={value} onChange={(event, newValue) => { setValue(newValue) }}/>
@@ -177,16 +157,7 @@ function handleclick(event){
                       </div>
                      )                 
                   })}
-               
-         
-           
-          
-        
-                                      
-       
-           
-       
-        
+                     
       </div>
   )}
       </div>
