@@ -9,9 +9,7 @@ function Card(props){
      }
   
   function removeMovie() {
-  
-     props.removeFromWatchLater(props.id);
-          
+     props.removeFromWatchLater(props.id); 
   }
   
   return(
