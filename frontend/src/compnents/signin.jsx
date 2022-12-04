@@ -84,13 +84,9 @@ function Signin(){
                         </div>
                         
                     </div>
-             </div>      
-
-              
-         
+             </div>         
 
     )
-
 
 }
 export default Signin;
