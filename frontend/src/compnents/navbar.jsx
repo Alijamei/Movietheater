@@ -10,7 +10,7 @@ function Navbar(){
   const user=userObject != undefined;
   console.log(userObject)
 
-  const logout = () => {
+  const logOut = () => {
     axios.defaults.withCredentials = true
     axios.get(process.env.REACT_APP_BACKEND_URL + "/user/logout").then((res) => {
         if (res) {
@@ -34,7 +34,7 @@ function Navbar(){
                        
                      {user &&(<Link to='/watchlater'><button className='listed'><li className='fa fa-list-alt'></li>My Watch list</button></Link>)}
                      {!user && <Link to="/signin"> <li className="signin in">Sign in</li></Link>}
-                      {user &&(<li className="logout" onClick={logout}>Log out</li>)}
+                      {user &&(<li className="logout" onClick={logOut}>Log out</li>)}
                 </ul>
          </div>
     </div>

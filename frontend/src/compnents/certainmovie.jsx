@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import "./certainmovie.css";
-import { AuthContext } from "../authcontext";
 
 function Certainmovie(props){
     

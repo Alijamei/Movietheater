@@ -1,7 +1,7 @@
-import {React,useState} from "react";
+import {React} from "react";
 
 function Cartit(props){
-    if(props.inti.length === 0 ){
+    if(props.checkIfListIsEmpty.length === 0 ){
         return(
              <h1>Nothing on  Watch list</h1>
         )
@@ -9,7 +9,7 @@ function Cartit(props){
     return(
         
       <div> 
-         {props.mapp}
+         {props.viewAllWatchLaterList}
       </div>
  
     )

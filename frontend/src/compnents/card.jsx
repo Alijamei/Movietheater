@@ -2,35 +2,32 @@ import {React,useState} from "react";
 import "./cards.css";
 
 function Card(props){
-    const [start,torf] = useState (props.valueo)
-    const [smh,end] = useState (props.change)
-  function pressed() {
+    const [addMovieStatus,setaddMovieStatus] = useState (props.status)
+    const [removeBtn,setremoveBtn] = useState (props.change)
+  function saveMovieInDb() {
            props.saveWatchLaterInDb(props.soon,props.title,props.image,props.quantity,props.info); 
      }
   
-      function Remove() {
-        
-           
-         props.hereremove(props.id);
-        
-        console.log(props.id)
-      
-      }
-      
+  function removeMovie() {
+  
+     props.removeFromWatchLater(props.id);
+          
+  }
+  
   return(
     
    
       
-         <div className={ "cards" }  style={props.stylecard}>
+         <div className={ "cards" }  style={props.styleCard}>
             <img className="imagescar"  style={props.style}  src={props.image} />
-             <div className="cardinfo" style={props.styleofcardinfo}>
-                <p className="comingsoon" style={props.styleofsoon}>{props.soon}</p>
-                <h2 className ="movietitle" style={props.styleoftitle}>{props.title}</h2>
-                <p className="movieinfosoon" style={props.styleinfo}> {props.info} </p>
+             <div className="cardinfo" style={props.styleOfCardInfo}>
+                <p className="comingsoon" style={props.styleOfSoon}>{props.soon}</p>
+                <h2 className ="movietitle" style={props.styleOfTitle}>{props.title}</h2>
+                <p className="movieinfosoon" style={props.styleInfo}> {props.info} </p>
                  {/* { start ? <button onClick={pressed}  style={props.buttonstyle} >{props.button}{props.press}</button> : null}            */}
-                { smh ? <i  onClick={Remove}  className={props.remove}> </i> : null} 
-                 { smh ?  <p>{props.quantity}</p> : <p style={{display:'none'}}>{props.quantity}</p>}
-                 { start ? <i onClick={pressed}  className={props.icon}></i> : null}   
+                { removeBtn ? <i  onClick={removeMovie}  className={props.remove}> </i> : null} 
+                 { removeBtn ?  <p>{props.quantity}</p> : <p style={{display:'none'}}>{props.quantity}</p>}
+                 { addMovieStatus ? <i onClick={saveMovieInDb}  className={props.icon}></i> : null}   
              </div>
             </div> 
        

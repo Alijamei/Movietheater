@@ -1,4 +1,4 @@
-import {React,useState} from "react";
+import {React} from "react";
 import Post from "../../inputpost";
 import Navbar from "../../navbar";
 import Footer  from "../../footer";

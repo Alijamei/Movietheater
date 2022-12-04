@@ -1,9 +1,7 @@
-import React, { createContext,useContext, useEffect, useState } from 'react'
+import React, {useContext} from 'react'
 import Carousel, {slidesToShowPlugin }  from '@brainhubeu/react-carousel';
-import axios from 'axios';
 import Card from '../card';
 import { WatchLaterContext } from '../../context/watchLaterContext'
-import { useCookies } from 'react-cookie';
 import useSaveMovieInWatchLaterDB from '../../api/useSaveMovie';
 
 export default function MainPageCard(){
@@ -14,14 +12,7 @@ export default function MainPageCard(){
     const titleDjango = "Django";
     const titleBlueStreak = "bluestreak";
 
-    return(
-        // <Route exact path="/">     
-        //     <Navbar />
-        //     <Image />
-        //     <Movies />
-        //     <Middle />
-            
-            
+    return(       
         <div className="container" >
             <Carousel
                 plugins={[
@@ -43,8 +34,7 @@ export default function MainPageCard(){
                     cards={"cardofscarface"}
                     icon={WatchLaterList.find(list => list.array.title === titleScarface) ? "icon fa fa-check-circle fa-lg" : "icon fa fa-plus-square fa-lg"}
                     saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
-                    // press={'Watchlater'}
-                    valueo={true}
+                    status={true}
                     change={false}
             
                     />
@@ -58,7 +48,7 @@ export default function MainPageCard(){
                     info={"With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi."}
                     cards={"cardofdjanjo"}
                     saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
-                    valueo={true}
+                    status={true}
                     // button={"Watchlater"}
 
                 
@@ -73,11 +63,11 @@ export default function MainPageCard(){
                     info={"With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi."}
                     cards={"cardofbluestreak"}
                     saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
-                    valueo={true}
+                    status={true}
                     // button={'Watchlater'}
                 
                 
-                    />
+                     />
                             
                     <Card
                         key = {4}
@@ -88,7 +78,7 @@ export default function MainPageCard(){
                         info={"Elliot, a brilliant but highly unstable young cyber-security engineer becomes a key figure in a complex game of global domiHnance Worldwide"}
                         cards={"cardofMr.robot"}
                         saveWatchLaterInDb={useSaveMovieInWatchLaterDB}
-                        valueo={true}
+                        status={true}
                         // button={'Watchlater'}
                         />
             </Carousel>

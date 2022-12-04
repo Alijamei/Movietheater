@@ -41,7 +41,6 @@ const [value, setValue] = useState(1);
 
    
 
-    //{  console.log(posts,'HEREsetitpost')}
 function click(){
 
    settruorfls(!fls)

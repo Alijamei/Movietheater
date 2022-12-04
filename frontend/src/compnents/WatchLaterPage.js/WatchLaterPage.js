@@ -1,5 +1,5 @@
 import axios from "axios";
-import {React,useState,useEffect,useContext} from "react";
+import {React,useContext} from "react";
 import { WatchLaterContext } from '../../context/watchLaterContext'
 import WatchLater  from "../cart";
 import Card from '../card';
@@ -32,28 +32,25 @@ export default function WatchLaterPage(){
     return(
         <>
                <WatchLater
-                         inti =  {WatchLaterList}                     
-                         mapp= {WatchLaterList.map((item) => (
-                                                                
+                         checkIfListIsEmpty = {WatchLaterList}                     
+                         viewAllWatchLaterList= {WatchLaterList.map((item) => (                                             
                                   <div className="right">
-                                        {/* {console.log(item.info)} */}
-
                                       <Card
-                                         stylecard={{float:'left',width:'21%'}}
+                                        styleCard={{float:'left',width:'21%'}}
                                         key={item._id}
                                         id={item._id}
                                         image={item.array.image}
                                         soon={item.array.soon}
                                         title={item.array.title}
                                         info={item.array.info}             
-                                        herecallit={useSaveMovieInWatchLaterDB}          
+                                        saveWatchLaterInDb={useSaveMovieInWatchLaterDB}          
                                         remove={'icon fa fa-trash'}
-                                        hereremove={removeFromWatchLaterList}
-                                        valueo={false}
+                                        removeFromWatchLater={removeFromWatchLaterList}
+                                        status={false}
                                         change={true}
                                   
                                 />
-                                </div>
+                                   </div>
                                 ))} 
 
                        />
