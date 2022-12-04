@@ -32,28 +32,28 @@ export default function WatchLaterPage(){
     return(
         <>
                <WatchLater
-                         checkIfListIsEmpty = {WatchLaterList}                     
-                         viewAllWatchLaterList= {WatchLaterList.map((item) => (                                             
-                                  <div className="right">
-                                      <Card
-                                        styleCard={{float:'left',width:'21%'}}
-                                        key={item._id}
-                                        id={item._id}
-                                        image={item.array.image}
-                                        soon={item.array.soon}
-                                        title={item.array.title}
-                                        info={item.array.info}             
-                                        saveWatchLaterInDb={useSaveMovieInWatchLaterDB}          
-                                        remove={'icon fa fa-trash'}
-                                        removeFromWatchLater={removeFromWatchLaterList}
-                                        status={false}
-                                        change={true}
-                                  
-                                />
-                                   </div>
-                                ))} 
+                   checkIfListIsEmpty = {WatchLaterList}                     
+                    viewAllWatchLaterList= {WatchLaterList.map((item) => (                                             
+                              <div className="right">
+                                  <Card
+                                    styleCard={{float:'left',width:'21%'}}
+                                    key={item._id}
+                                    id={item._id}
+                                    image={item.array.image}
+                                    soon={item.array.soon}
+                                    title={item.array.title}
+                                    info={item.array.info}             
+                                    saveWatchLaterInDb={useSaveMovieInWatchLaterDB}          
+                                    remove={'icon fa fa-trash'}
+                                    removeFromWatchLater={removeFromWatchLaterList}
+                                    status={false}
+                                    change={true}
 
-                       />
+                            />
+                               </div>
+                            ))} 
+
+                   />
 
         </>
     )
