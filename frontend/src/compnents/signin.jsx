@@ -1,14 +1,11 @@
-import {React,useState,useContext,useEffect} from "react";
+import {React,useState,useContext} from "react";
 import {
   useHistory, 
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 import { AuthContext } from "../authcontext";
 import { schema } from "../valdition";
-import * as yup from "yup";
 import axios from "axios";
 
 function Signin(){

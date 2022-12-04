@@ -115,7 +115,7 @@ function handleclick(event){
     
     axios
     .post(
-      process.env.REACT_APP_BACKEND_URL +`/${props.port}`,{[props.postit] : name,review:value})
+      process.env.REACT_APP_BACKEND_URL +`/${props.port}`,{[props.postTheMovie] : name,review:value})
     .then(res => { 
     
             window.location.reload();
@@ -136,7 +136,7 @@ function handleclick(event){
 
 
     return (
-      <div className='all' style={props.theinputstyle} onClick={clicked}>
+      <div className='all' style={props.theInputStyle} onClick={clicked}>
      
        <div className="containertofform"> 
       

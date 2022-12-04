@@ -22,7 +22,7 @@ export default function MovieDetailsPage(){
               stream:"Stream Goodfellas  now — no subscription required.",
               poster:"/images/goodfelles.jpg",
               port:"goodfellaspost",
-              postit:"postsfella"
+              postTheMovie:"postsfella"
             },
             "/soprano":{
               path: "/soprano",
@@ -33,7 +33,7 @@ export default function MovieDetailsPage(){
               stream:"Stream  The Sopranos  now — no subscription required.",
               poster:"/images/sopr.jpeg",
               port:"sopranopost",
-              postit:"postssoprano",
+              postTheMovie:"postssoprano",
             },
             "/onceupontime":{
               path: "/onceupontime",
@@ -44,7 +44,7 @@ export default function MovieDetailsPage(){
               stream:"Stream Once upon time in Hollywood  now — no subscription required.",
               poster:"/images/holywood.jpg",
               port:"onceupontimepost",
-              postit:"postsupontime",
+              postTheMovie:"postsupontime",
             }
           
 
@@ -68,9 +68,9 @@ export default function MovieDetailsPage(){
                               poster={currentRouterData.poster}
                               />
                               <Post 
-                                  theinputstyle={{marginBottom:'150px',marginLeft:'30px'}} 
+                                  theInputStyle={{marginBottom:'150px',marginLeft:'30px'}} 
                                   port={currentRouterData.port}
-                                  postit={currentRouterData.postit}
+                                  postTheMovie={currentRouterData.postTheMovie}
                                 
                                 />
                             <Footer />       

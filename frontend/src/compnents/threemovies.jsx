@@ -1,11 +1,9 @@
-import React, {useContext, useState } from "react";
-import { Link,useLocation } from "react-router-dom";
+import React, {useState } from "react";
+import { Link } from "react-router-dom";
 import "./threemovies.css";
-import { AuthContext } from "../authcontext";
 
 function Movies(){
-   // const userObject = useContext(AuthContext);
-   //  console.log(userObject)
+
    const[intial,set] = useState(false)
 
    
