@@ -6,14 +6,10 @@
     padding: 0 4px;
   }
   .imgtwo{
-    /* width: 79%; */
-    height: 35vh;
-    /* /eight: auto;   */
+    height: 35.3vh;
+  }
 
- }
-
-  .firstmovie{
-     
+  .firstmovie{  
       float: left;
       width: 30vw;   
       object-fit: cover;
@@ -128,38 +124,29 @@
 @media only screen and (max-width: 700px) {
     
     .firstmovie{
-   
         width: 100%;  
         object-fit: cover;
-        padding: 5px;
-        
-    }
-   
-    
+        padding: 5px;   
+    }    
     .findsopr{
         position: static;
     }
-    .secondmovie{
-       
-        width: 100%;
-        
+    .secondmovie{  
+        width: 100%;   
         object-fit: cover;
         padding: 5px;
     }
     .thirdmovie{
        
-       width: 100%;
+        width: 100%;
         height:100%;
         object-fit: cover;
-        
         padding: 5px;
 
     }
     .moviep{
        width:70%;
-        
-        
-        position:relative;
+       position:relative;
      }
      .sopranosparagraph{
            left:70px;
@@ -174,27 +161,16 @@
         position:relative;
         left:90px;
      
-    }
-   
-    
-  
-    
-
+    }    
 }
 
 
 
 @media only screen and (max-width: 1000px) {
-    /* .imgtwo{
-        height: 31.5vh;
-     } */
- 
     .toh{
         position: relative;
-        right: 250px;
-       
-    }
-    
+        right: 250px;  
+    }  
     .mid{
        
     }
@@ -211,14 +187,9 @@
 
     }
     .wiretime{
-
         position:absolute;
         left: 455px;
-        bottom: 30px;
-
-       
-
-     
+        bottom: 30px;    
     }
     .news {
         position: absolute;
