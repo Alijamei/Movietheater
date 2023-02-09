@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

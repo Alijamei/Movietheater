@@ -6,14 +6,16 @@
     padding: 0 4px;
   }
   .imgtwo{
-    height: 33.5vh;
+    /* width: 79%; */
+    height: 35vh;
+    /* /eight: auto;   */
+
  }
 
   .firstmovie{
      
       float: left;
-      width: 30vw;
-     
+      width: 30vw;   
       object-fit: cover;
       padding: 5px;
       
@@ -124,10 +126,10 @@
 
 
 @media only screen and (max-width: 700px) {
+    
     .firstmovie{
    
-        width: 100%;
-        
+        width: 100%;  
         object-fit: cover;
         padding: 5px;
         
@@ -166,12 +168,9 @@
      }
      .imag{
          margin-top:50px;
+
     }
-    .findoutmore{
-      
-        
-      
-        
+    .findoutmore{ 
         position:relative;
         left:90px;
      
@@ -189,6 +188,7 @@
     /* .imgtwo{
         height: 31.5vh;
      } */
+ 
     .toh{
         position: relative;
         right: 250px;
@@ -200,7 +200,9 @@
     }
     .imgtwo{
         height: auto;
-     }
+        width: 100%;
+
+     } 
     .wire{
         
         position:absolute;
@@ -249,7 +251,7 @@
         
     }
     
-    .wire{
+ .wire{
        
     transform: translateX(-200px) translateY(-20px);
     position:absolute;

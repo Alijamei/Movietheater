@@ -54,7 +54,7 @@ function Movies(){
             </div>
           </div>
           <div className="secondmovie">
-               <img className="imag imgtwo" src="/images/out.jpg" />
+               <img className="imag imgtwo" src="/images/out1.jpg" />
              <div className="textcontaner">
                <h1 className="otwh1"> once upon time in hollowyood </h1>
                <p className="moviep otw">A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.</p>
