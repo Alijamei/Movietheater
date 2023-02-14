@@ -10,8 +10,12 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo');
 const passport = require('passport')
 var cors = require('cors')
+const helmet = require("helmet");
+
 
 const app = express()
+
+app.use(helmet());
 
 const PORT = process.env.PORT || 5000;
 
