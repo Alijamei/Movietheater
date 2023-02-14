@@ -14,7 +14,7 @@ function Card(props){
   
   return(
          <div className={ "cards" }  style={props.styleCard}>
-            <img className="imagescar"  style={props.style}  src={props.image} />
+            <img className="imagescar"  style={props.style}  src={props.image} alt=""  />
              <div className="cardinfo" style={props.styleOfCardInfo}>
                 <p className="comingsoon" style={props.styleOfSoon}>{props.soon}</p>
                 <h2 className ="movietitle" style={props.styleOfTitle}>{props.title}</h2>

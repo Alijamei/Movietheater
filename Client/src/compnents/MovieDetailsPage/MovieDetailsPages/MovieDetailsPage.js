@@ -1,14 +1,14 @@
 import {React} from "react";
-import Post from "../../inputpost";
-import Navbar from "../../navbar";
-import Footer  from "../../footer";
+import Post from "../../inputpost.jsx";
+import Navbar from "../../navbar.jsx";
+import Footer  from "../../footer.jsx";
 import CertainMovie from "../../certainmovie.jsx";
 
 import {
     Redirect, useLocation ,
     Route
   } from "react-router-dom";
-import Notfound from "../../notfound";
+import Notfound from "../../notfound.js";
 
 
 export default function MovieDetailsPage(){

@@ -41,7 +41,7 @@ function Movies(){
             </div>  
                   
         <div className="firstmovie">
-               <img  className="imag felle"  src="/images/goodfelles.jpg"  />
+               <img  className="imag felle"  src="/images/goodfelles.jpg"  alt=""/>
             <div className="textcontaner">
                <h1 className="fella" onMouseOver={setit} > Goodfelles </h1>
                <p className="moviep">The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.</p>
@@ -54,7 +54,7 @@ function Movies(){
             </div>
           </div>
           <div className="secondmovie">
-               <img className="imag imgtwo" src="/images/out1.jpg" />
+               <img className="imag imgtwo" src="/images/out1.jpg" alt=""/>
              <div className="textcontaner">
                <h1 className="otwh1"> once upon time in hollowyood </h1>
                <p className="moviep otw">A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.</p>
@@ -63,7 +63,7 @@ function Movies(){
             </div> 
           </div>
           <div className="thirdmovie">
-              <img className="imag" src="/images/thesopranos.jpg" />
+              <img className="imag" src="/images/thesopranos.jpg" alt=""/>
             <div className="textcontaner">
               <h1> the Sopranos </h1>
                <p className="moviep sopranosparagraph">New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life that affect his mental state, leading him to seek professional psychiatric counseling.</p>

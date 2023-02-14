@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
 import Carousel, {slidesToShowPlugin }  from '@brainhubeu/react-carousel';
-import Card from '../card';
-import { WatchLaterContext } from '../../context/watchLaterContext'
-import useSaveMovieInWatchLaterDB from '../../api/useSaveMovie';
+import Card from '../card.jsx';
+import { WatchLaterContext } from '../../context/watchLaterContext.js'
+import useSaveMovieInWatchLaterDB from '../../api/useSaveMovie.js';
 
 export default function MainPageCard(){
      const {WatchLaterList,setWatchLaterList} = useContext(WatchLaterContext);

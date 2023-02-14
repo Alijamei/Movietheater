@@ -1,9 +1,9 @@
 import axios from "axios";
 import {React,useContext} from "react";
-import { WatchLaterContext } from '../../context/watchLaterContext'
-import WatchLater  from "../cart";
-import Card from '../card';
-import useSaveMovieInWatchLaterDB from '../../api/useSaveMovie';
+import { WatchLaterContext } from '../../context/watchLaterContext.js'
+import WatchLater  from "../cart.jsx";
+import Card from '../card.jsx';
+import useSaveMovieInWatchLaterDB from '../../api/useSaveMovie.js';
 
 export default function WatchLaterPage(){
     const {WatchLaterList,setWatchLaterList} = useContext(WatchLaterContext);

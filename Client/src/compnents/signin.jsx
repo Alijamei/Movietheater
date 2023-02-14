@@ -57,7 +57,7 @@ function Signin(){
     return (
           
      <div className='all'> 
-         <img className="imggg" src="/images/logo.png" />
+         <img className="imggg" src="/images/logo.png" alt=""/>
 
          <div className='containerr  signincontainer' >
               

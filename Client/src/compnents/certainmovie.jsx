@@ -7,7 +7,7 @@ function Certainmovie(props){
                     <div className="bodymovies">
                                     
                         <div className="middleimagecontainer">
-                            <img className="middleimage" src= {props.image} />
+                            <img className="middleimage" src= {props.image} alt="" />
                         </div>
                         <div className ="box">
                             <p className="goodfellesinbox">{props.title}</p> 

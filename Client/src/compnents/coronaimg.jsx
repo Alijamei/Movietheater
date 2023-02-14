@@ -3,7 +3,7 @@ import "./coronaimg.css"
 function Image(){
          return(
              <div className="image">
-                 <img src="/images/nyc.jpg" />
+                 <img src="/images/nyc.jpg" alt="" />
             </div>
         );
 }

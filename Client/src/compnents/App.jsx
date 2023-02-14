@@ -1,24 +1,18 @@
-import {React,useContext} from "react";
+import React, { useContext } from "react";
 import '@brainhubeu/react-carousel/lib/style.css';
-import Navbar from "./navbar";
-import  Image  from "./coronaimg";
-import Movies  from "./threemovies";
-import Middle from "./grey";
-import Footer  from "./footer";
-import SignIn from './signin';
-import SignUp from "./signup";
- import {
-   Switch, BrowserRouter as Router,
-   Route
- } from "react-router-dom";
-import { AuthContext } from "../authcontext";
+import Navbar from "./navbar.jsx";
+import Image from "./coronaimg.jsx";
+import Movies from "./threemovies.jsx";
+import Middle from "./grey.jsx";
+import Footer from "./footer.jsx";
+import SignIn from './signin.jsx';
+import SignUp from "./signup.jsx";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { AuthContext } from "../authcontext.js";
 import Notfound from './notfound';
-import MainPageCard from "./MainPageCompenents/MainPageCard";
-import MovieDetailsPage from "./MovieDetailsPage/MovieDetailsPage.js/MovieDetailsPage";
-import WatchLaterPage from "./WatchLaterPage.js/WatchLaterPage";
-
-  
-
+import MainPageCard from "./MainPageCompenents/MainPageCard.js";
+import MovieDetailsPage from "./MovieDetailsPage/MovieDetailsPages/MovieDetailsPage.js";
+import WatchLaterPage from "./WatchLaterPage/WatchLaterPage.js";
 function App(){          
  
    const userObject = useContext(AuthContext);

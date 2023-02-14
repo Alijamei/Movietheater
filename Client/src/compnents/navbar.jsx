@@ -26,7 +26,7 @@ function Navbar(){
          <div className="navwrapper">
          
                 <ul id="nav-mobile" className="left hide-on-med-and-down">            
-                     <a><img className="imgnav" src="/images/logo.png" /></a>
+                     <a><img className="imgnav" src="/images/logo.png" alt=""/></a>
                     <li><a className="liii"> Series</a></li>
                     <li><a className="liii">Movies</a></li>
                     <li><a className="liii">Theater</a></li>

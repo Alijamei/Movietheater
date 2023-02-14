@@ -7,7 +7,7 @@ function Footer(){
                     <li className="lil">About</li>
                     <li className="lil">PRIVACY POLICY</li>
                     <li className="lil">ALL right reserved 2021</li>
-                     <img className="imgs" src="/images/logo.png" />      
+                     <img className="imgs" src="/images/logo.png"  alt=""/>      
                     </ul>                  
                 </div>
   )
