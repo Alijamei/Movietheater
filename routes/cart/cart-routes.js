@@ -32,54 +32,92 @@ router.get('/cart', async function(req, res, next) {
 
 router.post('/cart',   function(req,res,next){
 
-  if(req.isAuthenticated()){
+  // if(req.isAuthenticated()){
    
-     User.findById(req.user._id,async function(err,theuser){
+  //    User.findById(req.user._id,async function(err,theuser){
 
-        if(err){
-            console.log(err)
-        }
-        else{
-             const Ccart = new Cart({
+  //       if(err){
+  //           console.log(err)
+  //       }
+  //       else{
+  //            const Ccart = new Cart({
       
-                  array:req.body,
-                  userr:theuser._id
+  //                 array:req.body,
+  //                 userr:theuser._id
 
-            })
-            if(!(theuser.carts.length>0)){
-                const item = await theuser.populate('carts');
-                await Ccart.save();                 
-                theuser.carts.push(Ccart);
-                await theuser.save();  
-                res.status(201).send({sla: item});     
-              }
-            else{
-                const item= await theuser.populate('carts')
-                 const itemm= item.carts;
-                 const itemu=itemm.some(item => item.array.title === Ccart.array.title);
-                if(itemu){
-                     console.log('Ccart')
-                     res.json(201).send('itemm');
+  //           })
+  //           if(!(theuser.carts.length>0)){
+  //               const item = await theuser.populate('carts');
+  //               await Ccart.save();                 
+  //               theuser.carts.push(Ccart);
+  //               await theuser.save();  
+  //               res.status(201).send({sla: item});     
+  //             }
+  //           else{
+  //               const item= await theuser.populate('carts')
+  //                const itemm= item.carts;
+  //                const itemu=itemm.some(item => item.array.title === Ccart.array.title);
+  //               if(itemu){
+  //                    console.log('Ccart')
+  //                    res.json(201).send('itemm');
                      
-                }
-                else{
+  //               }
+  //               else{
 
-                    const item= await theuser.populate('carts')
-                    await Ccart.save();                 
-                    theuser.carts.push(Ccart);
-                    await theuser.save();   
-                    console.log('heeeeeereeeeee')
-                    res.status(201).send(theuser);
+  //                   const item= await theuser.populate('carts')
+  //                   await Ccart.save();                 
+  //                   theuser.carts.push(Ccart);
+  //                   await theuser.save();   
+  //                   console.log('heeeeeereeeeee')
+  //                   res.status(201).send(theuser);
               
-                }
+  //               }
               
                
-            }
-        }
+  //           }
+  //       }
 
-    })
+  //   })
     
-    }
+  //   }
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user._id, async function (err, theuser) {
+      if (err) {
+        console.log(err);
+      } else {
+        const Ccart = new Cart({
+          array: req.body,
+          userr: theuser._id,
+        });
+  
+        if (!(theuser.carts.length > 0)) {
+          const item = await theuser.populate('carts');
+          await Ccart.save();
+          theuser.carts.push(Ccart);
+          await theuser.save();
+          res.status(201).send({ sla: item });
+        } else {
+          const item = await theuser.populate('carts');
+          const itemm = item.carts;
+          const itemu = itemm.some((item) => item.array.title === Ccart.array.title);
+          if (itemu) {
+            console.log('Ccart');
+            res.status(201).json('itemm');
+          } else {
+            await Ccart.save();
+            theuser.carts.push(Ccart);
+            await theuser.save();
+            console.log('heeeeeereeeeee');
+            res.status(201).send(theuser);
+          }
+        }
+      }
+    });
+  }
+  
+
+
     });
     
 router.delete('/cart/:pid',   function(req,res,next){
