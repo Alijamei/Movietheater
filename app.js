@@ -52,7 +52,7 @@ mongoose.connect(process.env.MONGOLAB_URI)
         console.error('Error connecting to Mongo', err);
     });
 
-app.use('/',userRoutes)
+app.use('/user',userRoutes)
 app.use('/', cartRoutes);
 app.use('/', postRoutes);  
 
