@@ -38,9 +38,13 @@ app.use(
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: MongoStore.create({ 
+    mongoUrl: process.env.MONGOLAB_URI,
+    ttl: 24 * 60 * 60 // session expiration time in seconds
+  })
+}));
 
-}))
 app.use(passport.initialize());
 app.use(passport.session());
 
