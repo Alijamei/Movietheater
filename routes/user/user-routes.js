@@ -40,7 +40,10 @@ passport.deserializeUser(User.deserializeUser());
 
 router.get('/logout',function(req,res){
 
-     res.send(req.logout());
+     req.logout(function(err) {
+        if (err) return next(err);
+        res.redirect('/');
+    });
   
 });
 
@@ -49,8 +52,10 @@ router.get('/get',function(req,res){
     if(req.isAuthenticated()){
       
           res.send(req.user);
+          console.log(req.user,'auth')
     }
     else{
+       console.log('no user')
        res.send('error no user');
     }
 })
