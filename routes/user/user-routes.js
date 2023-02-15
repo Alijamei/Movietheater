@@ -38,7 +38,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-router.get('/logout',function(req,res){
+router.get('/user/logout',function(req,res){
 
      req.logout(function(err) {
         if (err) return next(err);
@@ -47,7 +47,7 @@ router.get('/logout',function(req,res){
   
 });
 
-router.get('/get',function(req,res){
+router.get('/user/get',function(req,res){
          
     if(req.isAuthenticated()){
       
@@ -60,7 +60,7 @@ router.get('/get',function(req,res){
     }
 })
 
-router.post('/signup',function(req,res){
+router.post('/user/signup',function(req,res){
      User.register({name: req.body.name}, req.body.password, function(err,user) {
           if (err) { 
                        console.log(req.body.name)
@@ -83,7 +83,7 @@ router.post('/signup',function(req,res){
 });
 
 
-router.post('/login',function(req,res,next){
+router.post('/user/login',function(req,res,next){
     const user = new User({
          name: req.body.name,
          password: req.body.password   
