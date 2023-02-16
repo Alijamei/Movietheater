@@ -60,7 +60,7 @@ app.use('/user',userRoutes)
 app.use('/', cartRoutes);
 app.use('/', postRoutes);  
 
-console.log('Secret :',process.env.secret)
+console.log('Sec-ret :',process.env.SECRET)
 
 
 app.use(express.static(path.join(__dirname, './Client/build')))
