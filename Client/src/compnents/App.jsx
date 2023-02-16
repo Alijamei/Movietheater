@@ -23,49 +23,49 @@ function App(){
   let routes;
 
 
-  if (user) {
-   // if user loggedIn user can access protected routes //
-    routes = (        
-          <Router>
-            <div className="body">
-                <Switch>
-                    <Route exact path="/">     
-                          <Navbar />
-                          <Image />
-                          <Movies />
-                          <Middle /> 
-                        {/* Main page cards to add to Watchlater list  */} 
+//   if (user) {
+//    // if user loggedIn user can access protected routes //
+//     routes = (        
+//           <Router>
+//             <div className="body">
+//                 <Switch>
+//                     <Route exact path="/">     
+//                           <Navbar />
+//                           <Image />
+//                           <Movies />
+//                           <Middle /> 
+//                         {/* Main page cards to add to Watchlater list  */} 
 
-                        <MainPageCard />
+//                         <MainPageCard />
 
-                       <Footer /> 
-                      </Route> 
+//                        <Footer /> 
+//                       </Route> 
 
-                    <Route  path="/signin">
-                       <SignIn />
-                     </Route>
+//                     <Route  path="/signin">
+//                        <SignIn />
+//                      </Route>
 
-                    <Route  path="/signup">
-                        <SignUp />
-                    </Route>
+//                     <Route  path="/signup">
+//                         <SignUp />
+//                     </Route>
 
-                {/* User watch later list page */}
-                    <Route path ="/watchlater">
-                      {/* show  all the cart here in this router */}
-                       <Navbar />
+//                 {/* User watch later list page */}
+//                     <Route path ="/watchlater">
+//                       {/* show  all the cart here in this router */}
+//                        <Navbar />
 
-                      <WatchLaterPage />
-                    </Route> 
+//                       <WatchLaterPage />
+//                     </Route> 
                           
-                {/* Certain Movie Details page  */}
+//                 {/* Certain Movie Details page  */}
 
-                 <MovieDetailsPage />
+//                  <MovieDetailsPage />
                                         
-              </Switch>
-              </div>   
-           </Router>
-            );
-  } else {
+//               </Switch>
+//               </div>   
+//            </Router>
+//             );
+//   } else {
     routes = (
         <Router>
         {/* div className="body" */}
@@ -102,7 +102,7 @@ function App(){
         </Router>   
       
     );
-  }
+//   }
    
   return (
         <main>{routes}</main>
