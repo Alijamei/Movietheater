@@ -31,7 +31,7 @@ app.use(
   cors({
     methods: ["GET", "POST","DELETE"],
     credentials: true,
-    origin:  "https://benevolent-centaur-688fd6.netlify.app"
+    origin:  "https://imaginative-halva-c1a0c8.netlify.app"
   })
 );
 
