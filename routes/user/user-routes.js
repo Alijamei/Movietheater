@@ -12,7 +12,7 @@ app.use(
   cors({
     methods: ["GET", "POST"],
     credentials: true,
-    origin: "https://movie-theater-kmxn.onrender.com"
+    origin: "https://fanciful-youtiao-44a1bf.netlify.app"
   })
 );
 
