@@ -12,7 +12,7 @@ app.use(
   cors({
     methods: ["GET", "POST"],
     credentials: true,
-    origin: "https://fanciful-youtiao-44a1bf.netlify.app"
+    origin: "https://benevolent-centaur-688fd6.netlify.app"
   })
 );
 
