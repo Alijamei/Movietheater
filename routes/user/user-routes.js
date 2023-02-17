@@ -74,7 +74,7 @@ router.post('/signup',function(req,res){
                  }
                else{
                  passport.authenticate('local')(req, res,function() {
-                 console.log('signedup')
+                 console.log('signedup',req.isAuthenticated())
                   // res.status(201).send(req.user);
                   res.send(req.user);
                   
