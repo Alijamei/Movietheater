@@ -12,7 +12,7 @@ app.use(
   cors({
     methods: ["GET", "POST"],
     credentials: true,
-    origin: "https://imaginative-halva-c1a0c8.netlify.app"
+    origin: "https://movie-theater-t991.onrender.com"
   })
 );
 

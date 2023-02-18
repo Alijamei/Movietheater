@@ -4,10 +4,15 @@
     "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^11.0.0",
+    "express": "^4.18.2",
     "express-session": "^1.17.2",
     "form-data": "^4.0.0",
-    "memorystore": "^1.6.6"
-  },   
+    "helmet": "^6.0.1",
+    "memorystore": "^1.6.6",
+    "mongoose": "^6.9.2",
+    "passport": "^0.6.0",
+    "passport-local-mongoose": "^7.1.2"
+  },
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
@@ -16,6 +21,4 @@
     "dev": "concurrently \"npm run app\" \"npm run Client\"",
     "render-postbuild": "NPM_CONFIG_PRODUCTION=false  npm install --prefix Client && npm run build --  prefix Client"
   }
-  
-  
 }
