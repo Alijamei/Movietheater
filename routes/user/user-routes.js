@@ -12,7 +12,7 @@ app.use(
   cors({
     methods: ["GET", "POST"],
     credentials: true,
-    origin: "https://movie-theater-t991.onrender.com"
+    origin: "https://imaginative-halva-c1a0c8.netlify.app"
   })
 );
 
@@ -26,12 +26,9 @@ app.enable('trust proxy');
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
-  saveUninitialized: true,
-  store: MongoStore.create({ 
-    mongoUrl: process.env.MONGOLAB_URI,
-    ttl: 24 * 60 * 60 // session expiration time in seconds
-  })
-}));
+  saveUninitialized: true
+
+}))
 
 
 app.use(passport.initialize());
