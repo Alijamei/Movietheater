@@ -7,9 +7,9 @@ var mongoose = require('mongoose')
 const router = express.Router();
 
 router.get('/cart', async function(req, res, next) {
-  if (!req.user) {
-    return res.status(401).send({ error: 'Not authenticated' });
-  }
+//   if (!req.user) {
+//     return res.status(401).send({ error: 'Not authenticated' });
+//   }
 
   const theId = req.user._id;
   let tfind;
