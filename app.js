@@ -58,6 +58,7 @@ app.use('/', cartRoutes);
 app.use('/', postRoutes);  
 
 console.log('Sec-ret :',process.env.SECRET)
+console.log('MongoDB :',process.env.MONGOLAB_URI)
 
 app.use(express.static(path.join(__dirname, './Client/build')))
 
