@@ -8,13 +8,23 @@ const User = require('./Userschema');
 var cors = require('cors')
 
 var app = express()
-app.use(
-  cors({
-    methods: ["GET", "POST"],
-    credentials: true,
-    origin: "https://radiant-quokka-7684a5.netlify.app"
-  })
-);
+
+// app.use(
+//   cors({
+//     methods: ["GET", "POST"],
+//     credentials: true,
+//     origin: "https://radiant-quokka-7684a5.netlify.app"
+//   })
+
+// );
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://radiant-quokka-7684a5.netlify.app');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
+
 
 const router = express.Router();
 
