@@ -27,13 +27,21 @@ app.disable('etag');
 app.enable('trust proxy'); 
 
 
-app.use(
-  cors({
-    methods: ["GET", "POST","DELETE"],
-    credentials: true,
-    origin:  "https://radiant-quokka-7684a5.netlify.app"
-  })
-);
+// app.use(
+//   cors({
+//     methods: ["GET", "POST","DELETE"],
+//     credentials: true,
+//     origin:  "https://radiant-quokka-7684a5.netlify.app"
+//   })
+// );
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://radiant-quokka-7684a5.netlify.app');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
+
 
 app.use(session({
   secret: process.env.SECRET,
