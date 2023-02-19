@@ -8,13 +8,17 @@ const User = require('./Userschema');
 var cors = require('cors')
 
 var app = express()
+
 app.use(
   cors({
     methods: ["GET", "POST"],
     credentials: true,
-    origin: "https://imaginative-halva-c1a0c8.netlify.app"
+    origin: "https://radiant-quokka-7684a5.netlify.app"
   })
+
 );
+
+
 
 const router = express.Router();
 
@@ -64,14 +68,10 @@ router.get('/get',function(req,res){
 router.post('/signup',function(req,res){
      User.register({name: req.body.name}, req.body.password, function(err,user) {
           if (err) { 
-                       console.log(req.body.name)
-                       console.log( req.body.password)
-                       console.log('errrrrror',err)
-                       
+                   return err                       
                  }
                else{
                  passport.authenticate('local')(req, res,function() {
-                 console.log('signedup',req.isAuthenticated())
                   // res.status(201).send(req.user);
                   res.send(req.user);
                   
@@ -112,4 +112,3 @@ router.post('/login',function(req,res,next){
 
 
 module.exports = router;
-

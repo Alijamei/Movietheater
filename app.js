@@ -17,7 +17,7 @@ const app = express()
 
 app.use(helmet());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -28,12 +28,15 @@ app.enable('trust proxy');
 
 
 app.use(
-  cors({
+   cors({
     methods: ["GET", "POST","DELETE"],
     credentials: true,
-    origin:  "https://imaginative-halva-c1a0c8.netlify.app"
-  })
-);
+    origin:  "https://radiant-quokka-7684a5.netlify.app"
+   })
+ );
+
+
+
 
 app.use(session({
   secret: process.env.SECRET,
@@ -47,7 +50,7 @@ app.use(passport.session());
 
 mongoose.connect(process.env.MONGOLAB_URI)
     .then(() => {
-        console.log('Connected to Mongo!');
+        ;
     })
     .catch((err) => {
         console.error('Error connecting to Mongo', err);
@@ -57,7 +60,7 @@ app.use('/user',userRoutes)
 app.use('/', cartRoutes);
 app.use('/', postRoutes);  
 
-console.log('Sec-ret :',process.env.SECRET)
+
 
 
 app.use(express.static(path.join(__dirname, './Client/build')))
@@ -74,6 +77,6 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'Client', 'build','index.html')));
 }
  app.listen(PORT,function(){
-      console.log(`Server is running on port ${PORT}`)
+      
     
 })

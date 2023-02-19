@@ -130,7 +130,7 @@ router.post('/onceupontimepost',   function(req,res,next){
         User.findById(req.user._id,async function(err,theuser){
     
             if(err){
-                console.log(err)
+                
             }
             else{
             
@@ -197,7 +197,7 @@ router.post('/sopranopost',   function(req,res,next){
         User.findById(req.user._id,async function(err,theuser){
     
             if(err){
-                console.log(err)
+                
             }
             else{
                                     
@@ -268,7 +268,7 @@ router.post('/goodfellaspost',   function(req,res,next){
         User.findById(req.user._id,async function(err,theuser){
 
         if(err){
-            console.log(err)
+            
         }
    else{
      if(theuser){
@@ -334,10 +334,10 @@ router.patch('/goodfellaspost',   function(req,res,next){
      User.findByIdAndUpdate(user_id, { name: 'Gourav' },
      function (err, docs) {
             if (err){
-                console.log(err)
+                
             }
             else{
-                console.log("Updated User : ", docs);
+                ;
             }
         });
                         
@@ -356,7 +356,7 @@ router.delete('/get/:pid',   function(req,res,next){
      Post.findById(Id,async function(err,theuser){
 
         if(err){
-            console.log(err)
+            
         }
         else{
             const item= await theuser.populate('user')

@@ -7,9 +7,10 @@ var mongoose = require('mongoose')
 const router = express.Router();
 
 router.get('/cart', async function(req, res, next) {
-  if (!req.user) {
-    return res.status(401).send({ error: 'Not authenticated' });
-  }
+   if (!req.user) {
+//      return res.status(401).send({ error: 'Not authenticated' });
+         return req
+   }
 
   const theId = req.user._id;
   let tfind;
@@ -37,7 +38,7 @@ router.post('/cart',   function(req,res,next){
   //    User.findById(req.user._id,async function(err,theuser){
 
   //       if(err){
-  //           console.log(err)
+  //           
   //       }
   //       else{
   //            const Ccart = new Cart({
@@ -58,7 +59,7 @@ router.post('/cart',   function(req,res,next){
   //                const itemm= item.carts;
   //                const itemu=itemm.some(item => item.array.title === Ccart.array.title);
   //               if(itemu){
-  //                    console.log('Ccart')
+  //                    
   //                    res.json(201).send('itemm');
                      
   //               }
@@ -68,7 +69,7 @@ router.post('/cart',   function(req,res,next){
   //                   await Ccart.save();                 
   //                   theuser.carts.push(Ccart);
   //                   await theuser.save();   
-  //                   console.log('heeeeeereeeeee')
+  //                   
   //                   res.status(201).send(theuser);
               
   //               }
@@ -84,7 +85,7 @@ router.post('/cart',   function(req,res,next){
   if (req.isAuthenticated()) {
     User.findById(req.user._id, async function (err, theuser) {
       if (err) {
-        console.log(err);
+        ;
       } else {
         const Ccart = new Cart({
           array: req.body,
@@ -102,13 +103,13 @@ router.post('/cart',   function(req,res,next){
           const itemm = item.carts;
           const itemu = itemm.some((item) => item.array.title === Ccart.array.title);
           if (itemu) {
-            console.log('Ccart');
+            ;
             res.status(201).json('itemm');
           } else {
             await Ccart.save();
             theuser.carts.push(Ccart);
             await theuser.save();
-            console.log('heeeeeereeeeee');
+            ;
             res.status(201).send(theuser);
           }
         }
@@ -128,7 +129,7 @@ router.delete('/cart/:pid',   function(req,res,next){
                  Cart.findById(placeId,async function(err,theuser){
             
                     if(err){
-                        console.log(err)
+                        
                     }
                     else{
                       
