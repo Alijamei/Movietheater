@@ -33,8 +33,8 @@ function Signup(){
                               axios
                                 .post(process.env.REACT_APP_BACKEND_URL + "/user/signup", data)
                                     .then(res => {           
-                                         location.reload()  
-                                         console.log(res);  
+                                        window.location.href = "/"
+                                         //console.log(res);  
                                 })
                                      .catch((err) => {
                                         console.log(err)

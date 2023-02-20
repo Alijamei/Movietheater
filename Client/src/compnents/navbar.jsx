@@ -8,7 +8,7 @@ import axios from "axios";
 function Navbar(){
   const userObject = useContext(AuthContext);
   const user=userObject != undefined;
-  console.log(userObject)
+ // console.log(userObject)
 
   const logOut = () => {
     axios.defaults.withCredentials = true

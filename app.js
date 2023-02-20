@@ -31,7 +31,7 @@ app.use(
    cors({
     methods: ["GET", "POST","DELETE"],
     credentials: true,
-    origin:  "https://radiant-quokka-7684a5.netlify.app"
+    origin:  "https://astonishing-gnome-563734.netlify.app"
    })
  );
 

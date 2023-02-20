@@ -29,11 +29,11 @@ function Signin(){
                 process.env.REACT_APP_BACKEND_URL + "/user/login" ,signin)
                .then(res => {           
                         window.location.href = "/"
-                        console.log(res);  
+                      //  console.log(res);  
               })
                .catch((err) => {
-                    console.log(err)
-                    console.log('error here')                  
+                  //  console.log(err)
+                  //console.log('error here')                  
               });
                  
           }
