@@ -1,10 +1,14 @@
 import React from "react";
+import LazyLoad from 'react-lazy-load';
+
 import "./coronaimg.css"
 function Image(){
          return(
-             <div className="image">
+            // <LazyLoad>
+               <div className="image">
                  <img src="/images/nyc.jpg" alt="" />
-            </div>
+              </div>
+            // </LazyLoad> 
         );
 }
 export default Image;

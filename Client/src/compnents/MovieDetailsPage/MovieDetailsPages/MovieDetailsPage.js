@@ -1,4 +1,4 @@
-import {React} from "react";
+import React, {memo } from 'react'
 import Post from "../../inputpost.jsx";
 import Navbar from "../../navbar.jsx";
 import Footer  from "../../footer.jsx";
@@ -11,11 +11,11 @@ import {
 import Notfound from "../../notfound.js";
 
 
-export default function MovieDetailsPage(){
+function MovieDetailsPage(){
        let routesData = {
            "/goodfellas": {
               path:"/goodfellas",
-              image:"/images/wallfella.jpg",
+              image:"/images/wallfella.webp",
               title:"Goodfellas",
               video:"/images/fellavideo.mp4",
               watch:"Watch Goodfelles",
@@ -26,23 +26,23 @@ export default function MovieDetailsPage(){
             },
             "/soprano":{
               path: "/soprano",
-              image:"/images/soprano.jpg",
+              image:"/images/soprano.webp",
               title:"TheSopranos",
               video:"/images/soprano.mp4",
               watch:"Watch The Sopranos",
               stream:"Stream  The Sopranos  now — no subscription required.",
-              poster:"/images/sopr.jpeg",
+              poster:"/images/sopr.webp",
               port:"sopranopost",
               postTheMovie:"postssoprano",
             },
             "/onceupontime":{
               path: "/onceupontime",
-              image:"/images/hollywoodwallpaper.jpg",
+              image:"/images/hollywoodwallpaper.webp",
               title:"Once upon time in Hollywood",
               video:"/images/hollywood.mp4",
               watch:"Watch Once upon time in Hollywood",
               stream:"Stream Once upon time in Hollywood  now — no subscription required.",
-              poster:"/images/holywood.jpg",
+              poster:"/images/holywood.webp",
               port:"onceupontimepost",
               postTheMovie:"postsupontime",
             }
@@ -87,3 +87,4 @@ export default function MovieDetailsPage(){
           }
 }
 
+export default memo(MovieDetailsPage);
