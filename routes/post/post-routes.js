@@ -66,7 +66,6 @@ router.get("/sopranopost", async (req, res, next) => {
 });
 
 
-
 router.get("/goodfellaspost", async (req, res, next) => {
     if (req.isAuthenticated()) {
       try {
