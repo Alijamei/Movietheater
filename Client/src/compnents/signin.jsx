@@ -64,7 +64,7 @@ function Signin(){
              
                         <div class="form-container sign-in-container">
                             <form className="form" onSubmit={handleit}>
-                                <h1>Sign Inn</h1>
+                                <h1>Sign In</h1>
                                 <div class="social-container">
                                     <a  className="social"><i className='fa fa-facebook-square'></i></a>
                                     <a  className="social"><i className="fa fa-google"></i></a>
