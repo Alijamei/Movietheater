@@ -13,7 +13,7 @@ app.use(
   cors({
     methods: ["GET", "POST"],
     credentials: true,
-    origin: "https://astonishing-gnome-563734.netlify.app"
+    origin:  process.env.REACT_APP_FRONTEND_URL
   })
 
 );
@@ -99,8 +99,6 @@ router.post('/login',function(req,res,next){
                       res.send(req.user);           
                  });
         }
-  
-  
   });     
    
 });   

@@ -17,7 +17,7 @@ const app = express()
 
 app.use(helmet());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -31,7 +31,7 @@ app.use(
    cors({
     methods: ["GET", "POST","DELETE"],
     credentials: true,
-    origin:  "https://astonishing-gnome-563734.netlify.app"
+    origin:  process.env.REACT_APP_FRONTEND_URL
    })
  );
 
