@@ -1,4 +1,5 @@
 import {React,useState} from "react";
+import LazyLoad from 'react-lazy-load';
 import "./cards.css";
 
 function Card(props){
@@ -13,8 +14,11 @@ function Card(props){
   }
   
   return(
+      
          <div className={ "cards" }  style={props.styleCard}>
+          <LazyLoad>
             <img className="imagescar"  style={props.style}  src={props.image} alt=""  />
+            </LazyLoad>
              <div className="cardinfo" style={props.styleOfCardInfo}>
                 <p className="comingsoon" style={props.styleOfSoon}>{props.soon}</p>
                 <h2 className ="movietitle" style={props.styleOfTitle}>{props.title}</h2>
